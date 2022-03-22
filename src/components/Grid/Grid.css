@@ -1,0 +1,64 @@
+.flex {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+}
+
+.grid-col {
+  height: auto;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.grid-row {
+  height: auto;
+  flex-direction: row;
+}
+
+.grid-row.reverse,
+.grid.reverse {
+  flex-direction: row-reverse;
+}
+
+.grid-col.reverse {
+  flex-direction: col-reverse;
+}
+
+.autoFit {
+  flex: 1;
+}
+
+.scrollable {
+  overflow-y: auto;
+  height: 100%;
+}
+
+@media (max-width: 875px) {
+  .grid {
+    overflow-y: auto;
+    flex-direction: column;
+  }
+
+  .grid.reverse {
+    flex-direction: column-reverse;
+  }
+
+  .grid-col {
+    flex-direction: row;
+  }
+
+  .grid-row {
+    flex-direction: column;
+  }
+
+  .autoFit {
+    flex: none;
+  }
+}

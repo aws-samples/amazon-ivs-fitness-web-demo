@@ -1,0 +1,59 @@
+.racetrack {
+  position: relative;
+  background: var(--color-darkest-background);
+}
+
+.racetrack-path {
+  margin: 68px 70px;
+  position: relative;
+  text-align: center;
+  max-width: 320px;
+  width: 90%;
+}
+
+.participant-count {
+  width: 100%;
+  bottom: 20px;
+  font-size: 13px;
+  position: absolute;
+  text-align: center;
+}
+
+.participant-tracker-container {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  margin-left: -10px;
+  margin-top: -45px;
+  position: absolute;
+  top: 0;
+}
+
+.participant-tracker-container.user {
+  margin-left: -21px;
+  margin-top: -66px;
+}
+
+.participant-tracker {
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px 0 rgb(0 0 0 / 25%);
+  height: 8px;
+  margin-top: 15px;
+  width: 8px;
+  z-index: 10;
+}
+
+.participant-tracker.user {
+  height: 14px;
+  margin-top: 12px;
+  width: 14px;
+  z-index: 20;
+}
+
+@media (max-width: 875px) {
+  .racetrack-path {
+    margin: 67px auto;
+  }
+}

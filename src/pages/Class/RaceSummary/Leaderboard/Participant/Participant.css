@@ -1,0 +1,137 @@
+.rank {
+  width: 10px;
+}
+
+.participant {
+  gap: 10px;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.participant + .participant {
+  margin-top: 20px;
+}
+
+.participant-info {
+  align-items: center;
+  background: var(--color-light-background);
+  border-radius: 10px;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  min-height: 62px;
+  padding: 0 15px 0 10px;
+}
+
+.participant-info.user {
+  box-shadow: 0 0 0 2px var(--color-white) inset;
+  background: linear-gradient(
+    to right,
+    var(--color-white) 50%,
+    var(--color-light-background) 50%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 100%;
+}
+
+.participant-name {
+  max-width: 195px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.best-lap-text {
+  color: var(--color-black);
+  display: none;
+  position: absolute;
+  left: 57px;
+}
+
+.profile-info {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.race-info {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.time-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.time-data p {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.time-data > .time {
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: -0.36px;
+  width: 100%;
+  text-align: center;
+}
+
+.time-data.best {
+  font-size: 15px;
+  min-width: 50px;
+  opacity: 50%;
+}
+
+.time-data.current {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+}
+
+.best-lap-timers {
+  display: none;
+  font-style: normal;
+  font-weight: 500;
+  position: relative;
+  text-align: center;
+}
+
+.best-lap-timers p {
+  display: none;
+}
+
+.best-lap-time {
+  color: #00b84a;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.best-lap-time-diff {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 10px;
+  line-height: 12px;
+  position: absolute;
+  width: 100%;
+}
+
+@media (max-width: 875px) {
+  .participant-name {
+    max-width: calc(100vw - 270px);
+  }
+}
+
+@media (max-width: 350px) {
+  .participant-name {
+    display: none;
+  }
+}

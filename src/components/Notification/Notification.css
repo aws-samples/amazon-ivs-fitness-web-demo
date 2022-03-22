@@ -1,0 +1,217 @@
+/* Notification */
+.notification-container {
+  align-items: center;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  color: var(--color-black);
+  display: flex;
+  justify-content: space-between;
+  max-width: 460px;
+  padding: 25px;
+  width: 90%;
+  z-index: 142;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+}
+
+.slide-animation-enter {
+  animation: slideUp 0.2s;
+}
+
+.slide-animation-exit {
+  animation: slideDown 0.2s;
+}
+
+/* Icon */
+.notification-icon-container {
+  align-items: center;
+  background-color: var(--color-blue);
+  border: 1px solid var(--color-dark-blue);
+  border-radius: 50%;
+  display: flex;
+  height: 52px;
+  justify-content: center;
+  width: 52px;
+}
+
+/* Text */
+.notification-text-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  justify-content: center;
+  line-height: 18px;
+}
+
+.notification-text-container strong {
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 21px;
+}
+
+.notification-text-container p {
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Button */
+.notification-button-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-animation-enter {
+  animation: fadeIn 0.2s;
+}
+
+.fade-animation-exit {
+  animation: fadeOut 0.2s;
+}
+
+@keyframes bounce {
+  from,
+  20%,
+  53%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -7px, 0) scaleY(1.1);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -3px, 0) scaleY(1.05);
+  }
+
+  80% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0) scaleY(0.95);
+  }
+
+  90% {
+    transform: translate3d(0, -1px, 0) scaleY(1.02);
+  }
+}
+
+.bouncing-arrow {
+  position: absolute;
+  top: -25px;
+  z-index: 42;
+}
+
+.notification-button-container svg {
+  animation: bounce 1.5s 0.5s infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 184, 74, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(255, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+
+.pulse-animation-enter {
+  animation: pulse 0.6s;
+}
+
+.notification-button-container button {
+  border-radius: 5px;
+  border: 1px solid #00b84a;
+  font-family: Amazon Ember;
+  font-size: 19px;
+  line-height: 22px;
+  padding: 6px 9px 7px;
+  text-align: center;
+}
+
+.notification-button-container button:disabled {
+  cursor: default;
+}
+
+@media (max-width: 875px) {
+  .notification-container {
+    bottom: 20px;
+    position: fixed;
+  }
+
+  .notification-icon-container {
+    height: 40px;
+    width: 40px;
+  }
+
+  .notification-text-container {
+    margin-left: 0;
+  }
+
+  .notification-text-container p {
+    max-width: calc(100vw - 185px);
+  }
+
+  .bouncing-arrow {
+    top: -20px;
+  }
+
+  .notification-button-container button {
+    padding: 12px 18px 13px;
+  }
+}

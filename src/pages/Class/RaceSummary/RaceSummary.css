@@ -1,0 +1,15 @@
+.race-summary {
+  width: 460px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: var(--color-dark-background);
+}
+
+@media (max-width: 875px) {
+  .race-summary {
+    width: 100%;
+    max-width: none;
+  }
+}

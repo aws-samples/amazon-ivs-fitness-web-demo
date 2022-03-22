@@ -1,0 +1,80 @@
+.player-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.video-container {
+  height: 0;
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+  width: 100%;
+}
+
+video {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.notification-area {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 50%;
+  position: absolute;
+  width: 100%;
+}
+
+.trainer-info-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.trainer-info-container p {
+  color: var(--color-white);
+  text-align: center;
+}
+
+.trainer-info-gradient {
+  background: linear-gradient(
+    360deg,
+    rgba(0, 0, 0, 0.6) 28%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  bottom: 0;
+  height: 150px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.trainer-title {
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 21px;
+  margin-bottom: 6px;
+}
+
+.trainer-name {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+@media (min-width: 875px) {
+  .video-container {
+    height: 100%;
+  }
+}

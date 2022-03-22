@@ -1,0 +1,14 @@
+.leaderboard {
+  padding: 30px 20px;
+  background: var(--color-dark-background);
+}
+
+.leaderboard.with-tutorial {
+  padding-bottom: 139px;
+}
+
+@media (max-width: 875px) {
+  .leaderboard {
+    overflow-y: auto;
+  }
+}

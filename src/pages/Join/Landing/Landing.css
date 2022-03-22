@@ -1,0 +1,54 @@
+.landing-section {
+  width: auto;
+  height: 100%;
+  max-width: 460px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  /* background-image: url('../../../assets/YOUR_BACKGROUND.PNG'); */
+}
+
+header {
+  margin: 3.75rem 2.5rem;
+  flex-direction: column;
+}
+
+header > * {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 875px) {
+  header {
+    margin: 2.5rem 2.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .landing-section {
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
+}
+
+footer {
+  position: absolute;
+  left: 2.5rem;
+  bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  font-family: Amazon Ember;
+  font-size: 15px;
+  line-height: 18px;
+  border-radius: 2.5rem;
+  padding: 11px 40px 11px 18px;
+  background: var(--color-with-ivs);
+}
+
+.landing-section > footer > svg {
+  right: 5px;
+  position: absolute;
+  transform: scaleX(-1);
+}

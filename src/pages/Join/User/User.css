@@ -1,0 +1,48 @@
+.user-section {
+  width: 100%;
+  max-width: 32rem;
+  padding: 30px;
+}
+
+@media (max-width: 875px) {
+  h2 {
+    text-align: center;
+  }
+
+  .user-section {
+    height: 100%;
+    min-width: auto;
+  }
+}
+
+.user-section > form {
+  margin: 30px 0 40px 0;
+}
+
+.user-section > form > * {
+  margin-bottom: 10px;
+}
+
+.select-avatar-container {
+  padding: 12px 13px;
+  border-radius: var(--border-radius);
+  background: var(--color-dark-background);
+}
+
+.select-avatar-container > h4 {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--color-lightest-background);
+}
+
+.avatars {
+  display: grid;
+  column-gap: 15px;
+  row-gap: 10px;
+  margin-top: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
+}
+
+.join-class-btn {
+  width: 100%;
+}
