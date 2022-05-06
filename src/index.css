@@ -149,10 +149,15 @@ input {
   height: 42px;
   font-size: 15px;
   padding: 12px 14px;
-  border: 2px solid var(--color-white);
+  border: 2px solid var(--color-light-background);
   color: var(--color-white);
   background: var(--color-light-background);
   border-radius: var(--border-radius);
+}
+
+input:focus {
+  border: 2px solid var(--color-white);
+  outline: none;
 }
 
 @media (max-width: 875px) {

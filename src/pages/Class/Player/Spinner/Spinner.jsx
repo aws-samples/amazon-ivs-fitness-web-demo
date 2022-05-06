@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import SpinnerSVG from '../../../../assets/icons/spinner';
 
@@ -9,5 +10,13 @@ const Spinner = ({ loading }) =>
       <SpinnerSVG />
     </div>
   );
+
+Spinner.propTypes = {
+  loading: PropTypes.bool
+};
+
+Spinner.defaultProps = {
+  loading: false
+};
 
 export default Spinner;
