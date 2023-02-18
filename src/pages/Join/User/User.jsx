@@ -32,8 +32,7 @@ const User = () => {
   };
 
   const isBtnDisabled = !(name && avatar);
-  // TODO: It would be nicer to be specific to the user about which one they lack, e.g., "Please enter a name"
-  const disabledBtnTooltip = "Please enter a name and select an avatar";
+  const disabledBtnTooltip = `Please ${!name ? "enter a name" : ""}${(!name && !avatar) ? " and " : ""}${!avatar ? "select an avatar" : ""}`;
   const enabledBtnTooltip = "Let's rock! 🏃🏽‍♀️";
 
   return (
