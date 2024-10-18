@@ -146,12 +146,7 @@ const Leaderboard = ({ participants: nextParticipants }) => {
 };
 
 Leaderboard.propTypes = {
-  isPageScrollable: PropTypes.bool,
   participants: PropTypes.object.isRequired
-};
-
-Leaderboard.defaultProps = {
-  isPageScrollable: false
 };
 
 export default React.memo(Leaderboard, (prevProps, nextProps) => {

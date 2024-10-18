@@ -4,7 +4,7 @@ import SpinnerSVG from '../../../../assets/icons/spinner';
 
 import './Spinner.css';
 
-const Spinner = ({ loading }) =>
+const Spinner = ({ loading = false }) =>
   loading && (
     <div className="spinner">
       <SpinnerSVG />
@@ -13,10 +13,6 @@ const Spinner = ({ loading }) =>
 
 Spinner.propTypes = {
   loading: PropTypes.bool
-};
-
-Spinner.defaultProps = {
-  loading: false
 };
 
 export default Spinner;

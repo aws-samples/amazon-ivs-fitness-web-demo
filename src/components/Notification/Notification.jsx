@@ -8,7 +8,13 @@ import Avatar from '../Avatar';
 import useMobileBreakpoint from '../../contexts/MobileBreakpoint/useMobileBreakpoint';
 import useTimeoutState from './useTimeoutState';
 
-const Notification = ({ avatar, button, icon, subtitle, title }) => {
+const Notification = ({
+  avatar = null,
+  button = null,
+  icon = null,
+  subtitle = '',
+  title = ''
+}) => {
   const hasButton = !!button?.copy && !!button?.onClick;
   const { isMobileView, isNotificationHidden } = useMobileBreakpoint();
   const [isOpen, setIsOpen] = useState(false);
@@ -100,18 +106,8 @@ Notification.propTypes = {
     onClick: PropTypes.func
   }),
   icon: PropTypes.node,
-  isHidden: PropTypes.bool,
   subtitle: PropTypes.string,
   title: PropTypes.string
-};
-
-Notification.defaultProps = {
-  avatar: null,
-  button: null,
-  icon: null,
-  isHidden: false,
-  subtitle: '',
-  title: ''
 };
 
 export default Notification;

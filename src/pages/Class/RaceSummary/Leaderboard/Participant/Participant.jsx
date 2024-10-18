@@ -14,9 +14,9 @@ const defaultAnimationParams = {
 
 const Participant = ({
   avatar,
-  currentRank,
+  currentRank = null,
   elapsedLapTimeMs,
-  fastestLapTimeMs: newFastestLapTimeMs,
+  fastestLapTimeMs: newFastestLapTimeMs = null,
   flippedProps,
   isUser,
   name
@@ -364,11 +364,6 @@ Participant.propTypes = {
   flippedProps: PropTypes.object.isRequired,
   isUser: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired
-};
-
-Participant.defaultProps = {
-  currentRank: null,
-  fastestLapTimeMs: null
 };
 
 export default Participant;

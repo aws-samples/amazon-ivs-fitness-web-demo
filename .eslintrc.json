@@ -1,5 +1,8 @@
 {
   "extends": ["react-app", "plugin:jsx-a11y/recommended"],
   "plugins": ["jsx-a11y"],
-  "rules": { "react/prop-types": "warn", "react/require-default-props": "warn" }
+  "rules": {
+    "react/prop-types": "warn",
+    "react/require-default-props": ["warn", { "defaultProps": "ignore" }]
+  }
 }
