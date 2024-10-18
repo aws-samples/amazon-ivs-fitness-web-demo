@@ -83,6 +83,7 @@
   letter-spacing: -0.36px;
   width: 100%;
   text-align: center;
+  white-space: nowrap;
 }
 
 .time-data.best {
@@ -114,6 +115,7 @@
   color: #00b84a;
   font-size: 15px;
   line-height: 18px;
+  white-space: nowrap;
 }
 
 .best-lap-time-diff {
@@ -122,6 +124,7 @@
   line-height: 12px;
   position: absolute;
   width: 100%;
+  white-space: nowrap;
 }
 
 @media (max-width: 875px) {
