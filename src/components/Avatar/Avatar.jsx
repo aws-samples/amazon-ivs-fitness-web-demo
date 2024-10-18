@@ -7,7 +7,7 @@ import { USER_KEY } from '../../config';
 
 import './Avatar.css';
 
-const Icon = ({ avatar, name }) => (
+const Icon = ({ avatar = '', name = '' }) => (
   <img
     src={AVATARS[avatar]}
     alt={`${name || avatar} Avatar`}
@@ -20,20 +20,15 @@ Icon.propTypes = {
   name: PropTypes.string
 };
 
-Icon.defaultProps = {
-  avatar: '',
-  name: ''
-};
-
 const Avatar = ({
-  avatar,
-  name,
-  size,
-  crown,
-  marker,
-  onClick,
-  selected,
-  hoverable
+  avatar = '',
+  name = '',
+  size = 'auto',
+  crown = false,
+  marker = '',
+  onClick = null,
+  selected = false,
+  hoverable = false
 }) => {
   const classes = ['avatar'];
   classes.push(size);
@@ -63,17 +58,6 @@ Avatar.propTypes = {
   onClick: PropTypes.func,
   selected: PropTypes.bool,
   hoverable: PropTypes.bool
-};
-
-Avatar.defaultProps = {
-  name: '',
-  avatar: '',
-  size: 'auto',
-  crown: false,
-  marker: '',
-  onClick: null,
-  selected: false,
-  hoverable: false
 };
 
 export default Avatar;

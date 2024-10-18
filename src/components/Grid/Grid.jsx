@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './Grid.css';
 
-const Grid = ({ children: columns, reverse, scrollable }) => {
+const Grid = ({ children: columns, reverse = false, scrollable = false }) => {
   let classList = ['grid'];
 
   if (reverse) classList.push('reverse');
@@ -16,7 +16,7 @@ const Grid = ({ children: columns, reverse, scrollable }) => {
   );
 };
 
-const GridItem = ({ type, children, autoFit, scrollable }) => {
+const GridItem = ({ type, children, autoFit = false, scrollable = false }) => {
   let classList = ['flex'];
 
   if (type === 'row') classList.push('grid-row');
@@ -37,18 +37,11 @@ Grid.propTypes = {
   scrollable: PropTypes.bool
 };
 
-Grid.defaultProps = { reverse: false, scrollable: false };
-
 GridItem.propTypes = {
   children: PropTypes.node.isRequired,
   type: PropTypes.oneOf(['row', 'col']).isRequired,
   autoFit: PropTypes.bool,
   scrollable: PropTypes.bool
-};
-
-GridItem.defaultProps = {
-  autoFit: false,
-  scrollable: false
 };
 
 export default Grid;

@@ -9,7 +9,11 @@ import UserContext from './context';
  * @property {boolean} joined
  */
 
-const UserProvider = ({ children, storage, savedUserData }) => {
+const UserProvider = ({
+  children,
+  storage = sessionStorage,
+  savedUserData = { name: '', avatar: '' }
+}) => {
   /**
    * @type {[User, Function]}
    */
@@ -40,11 +44,6 @@ UserProvider.propTypes = {
     name: PropTypes.string,
     avatar: PropTypes.string
   })
-};
-
-UserProvider.defaultProps = {
-  storage: sessionStorage,
-  savedUserData: { name: '', avatar: '' }
 };
 
 export default UserProvider;
