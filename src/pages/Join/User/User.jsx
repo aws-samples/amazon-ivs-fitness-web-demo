@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import * as userAvatars from '../../../assets/avatars/user-avatars';
@@ -12,6 +12,15 @@ const User = () => {
   const { user, updateUser } = useUser();
   const [name, setname] = useState(user.name);
   const [avatar, setAvatar] = useState(user.avatar);
+  const nameInputRef = useRef();
+
+  const handleAvatarClick = (avatarSrcName) => {
+    setAvatar(avatarSrcName);
+    // If the name has not been filled-in yet, give it focus so the user naturally understands that that is what is needed next
+    if (!name) {
+      nameInputRef.current?.focus();
+    }
+  };
 
   const joinClass = (e) => {
     e.preventDefault();
@@ -22,14 +31,21 @@ const User = () => {
     } else console.error('Error joining class');
   };
 
+  const isBtnDisabled = !(name && avatar);
+  const disabledBtnTooltip = `Please ${!name ? "enter a name" : ""}${(!name && !avatar) ? " and " : ""}${!avatar ? "select an avatar" : ""}`;
+  const enabledBtnTooltip = "Let's rock! 🏃🏽‍♀️";
+
   return (
     <section className="user-section">
       <h2>Join the class</h2>
       <form onSubmit={joinClass}>
         <input
+          ref={nameInputRef}
           type="text"
           id="name"
           placeholder="Your name"
+          // TODO: Discuss this idea and if we want to us it, determine how to suppress the compilation error ("jsx-a11y/no-autofocus")
+          //autoFocus   
           value={name}
           onChange={(e) => setname(e.target.value)}
         />
@@ -42,13 +58,19 @@ const User = () => {
                 hoverable
                 selected={avatar === avatarSrcName}
                 key={avatarSrcName}
-                onClick={() => setAvatar(avatarSrcName)}
+                onClick={() => handleAvatarClick(avatarSrcName)}
               />
             ))}
           </div>
         </div>
       </form>
-      <button type="submit" className="join-class-btn" onClick={joinClass}>
+      <button 
+        type="submit" 
+        className="join-class-btn" 
+        disabled={isBtnDisabled} 
+        title={isBtnDisabled ? disabledBtnTooltip : enabledBtnTooltip} 
+        onClick={joinClass}
+      >
         Join Class
       </button>
     </section>
